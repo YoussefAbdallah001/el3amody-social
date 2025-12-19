@@ -67,7 +67,7 @@ header {
     font-size: 17px;
 }
 
-/* Grid Cards - تصميم جديد: 4 بطاقات فوق و2 بطاقات تحت */
+/* Grid Cards */
 .main-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -93,7 +93,6 @@ header {
     animation: fadeInUp 0.5s ease forwards;
 }
 
-/* تحديد تأخير مختلف لكل بطاقة للحصول على تأثير تسلسلي */
 .card:nth-child(1) { animation-delay: 0.1s; }
 .card:nth-child(2) { animation-delay: 0.2s; }
 .card:nth-child(3) { animation-delay: 0.3s; }
@@ -181,18 +180,10 @@ header {
     border: 1px solid #25d366;
 }
 
-.whatsapp:hover {
-    background: rgba(37, 211, 102, 0.1);
-}
-
 .facebook {
     background: #000;
     color: #1877f2;
     border: 1px solid #1877f2;
-}
-
-.facebook:hover {
-    background: rgba(24, 119, 242, 0.1);
 }
 
 .phone {
@@ -222,101 +213,24 @@ footer {
 }
 
 /* ===================== */
-/* Responsive - Media Queries */
-/* ===================== */
-
-/* فوق 950px - الوضع العادي (4 بطاقات فوق و2 تحت) */
-@media (min-width: 951px) {
-    .main-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-    .secondary-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* من 860px إلى 950px */
-@media (max-width: 950px) and (min-width: 861px) {
-    .main-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .secondary-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* من 861px إلى 860px - الحفاظ على إعداداتك */
+/* Responsive */
 @media (max-width: 860px) {
-    .container {
-        padding: 15px;
-    }
-    
-    .main-grid {
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    }
-    
-    .secondary-grid {
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    }
+    .main-grid, .secondary-grid { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
 }
-
 @media (max-width: 600px) {
-    .hero h1 {
-        font-size: 28px;
-    }
-    
-    .hero p {
-        font-size: 15px;
-    }
-    
-    .card p {
-        font-size: 14px;
-    }
-    
-    .contact h2 {
-        font-size: 24px;
-    }
+    .hero h1 { font-size: 28px; }
+    .hero p { font-size: 15px; }
+    .card p { font-size: 14px; }
 }
-
 @media (max-width: 500px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .logo {
-        text-align: center;
-        font-size: 24px;
-    }
-    
-    .main-grid,
-    .secondary-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .contact a,
-    .contact button {
-        width: 100%;
-        margin: 5px 0;
-    }
-    
-    .contact-buttons {
-        flex-direction: column;
-    }
+    header { flex-direction: column; align-items: center; gap: 10px; }
+    .logo { font-size: 24px; text-align: center; }
+    .main-grid, .secondary-grid { grid-template-columns: 1fr; gap: 15px; }
+    .contact a, .contact button { width: 100%; margin: 5px 0; }
+    .contact-buttons { flex-direction: column; }
 }
-
 @media (max-width: 400px) {
-    .card {
-        padding: 20px;
-    }
-    
-    .contact {
-        padding: 20px;
-    }
+    .card, .contact { padding: 20px; }
 }
 </style>
 </head>
@@ -334,28 +248,23 @@ footer {
         <p>لمبات، بلوفنيرات، أب داون، سبوتات والكثير من منتجاتنا 🔌</p>
     </section>
 
-    <!-- 4 بطاقات في الأعلى -->
     <section class="main-grid">
         <div class="card">
             <i class="fa-solid fa-lightbulb"></i>
             <h3>لمبات 9-60 وات</h3>
             <p>جودة عالية ومتنوعة</p>
         </div>
-
         <div class="card">
             <i class="fa-solid fa-square"></i>
             <h3>بلوفنيرات</h3>
             <p>مدورة ومربعة</p>
         </div>
-
         <div class="card">
-            <!-- <i class="fa-solid fa-up-right-and-down-left-from-center"></i> -->
             <i class="fa-solid fa-down-long"></i>
-             <i class="fa-solid fa-up-long"></i>
+            <i class="fa-solid fa-up-long"></i>
             <h3>أب داون</h3>
             <p>إضاءة مزدوجة للغرف والممرات</p>
         </div>
-
         <div class="card">
             <i class="fa-solid fa-bolt"></i>
             <h3>سبوتات</h3>
@@ -363,14 +272,12 @@ footer {
         </div>
     </section>
 
-    <!-- بطاقتين في الأسفل -->
     <section class="secondary-grid">
         <div class="card">
             <i class="fa-solid fa-truck"></i>
             <h3>توصيل مباشر</h3>
             <p>من المصنع لحد المحلات والعملاء بسرعة وأمان</p>
         </div>
-
         <div class="card">
             <i class="fa-solid fa-box"></i>
             <h3>تغليف احترافي</h3>
@@ -388,7 +295,7 @@ footer {
             </a>
 
             <a class="facebook" target="_blank"
-               href="https://www.facebook.com/profile.php?id=100078692685245&rdid=LuKOWOT4hMDk4c5R&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17VvdxeWtq%2F#">
+               href="https://www.facebook.com/profile.php?id=100078692685245">
                 <i class="fa-brands fa-facebook"></i> فيسبوك
             </a>
 
@@ -396,13 +303,14 @@ footer {
                 <i class="fa-solid fa-phone"></i> 01068886940
             </button>
         </div>
-        
-        <p id="copy-message"></p>
+
+        <p style="margin-top:10px; font-size:14px;">
+            ⚠ لو انت على iOS وعايز تفتح الروابط في Chrome، انسخ الرابط وافتحه في التطبيق
+        </p>
     </section>
 
     <footer>
-        © <span id="current-year"></span>
-        مصنع العمودي – جميع الحقوق محفوظة
+        © <span id="current-year"></span> مصنع العمودي – جميع الحقوق محفوظة
     </footer>
 </div>
 
@@ -417,17 +325,7 @@ function copyNumber() {
     });
 }
 
-// إضافة السنة الحالية في الفوتر
 document.getElementById('current-year').textContent = new Date().getFullYear();
-
-function openInChrome(url) {
-    var chromeURL = url.replace(/^https?:\/\//, 'googlechrome://');
-    window.location = chromeURL;
-    setTimeout(function() {
-        window.location = url;
-    }, 2000);
-}
 </script>
 </body>
-
 </html>
