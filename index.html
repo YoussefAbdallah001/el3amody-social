@@ -419,6 +419,15 @@ function copyNumber() {
 
 // إضافة السنة الحالية في الفوتر
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
+function openInChrome(url) {
+    var chromeURL = url.replace(/^https?:\/\//, 'googlechrome://');
+    window.location = chromeURL;
+    setTimeout(function() {
+        window.location = url;
+    }, 2000);
+}
 </script>
 </body>
+
 </html>
